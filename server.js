@@ -21,7 +21,6 @@ app.get("/", (req, res) => {
   const username = sessions[sessionId];
 
   if (username) {
-    // 如果用户已登录，则显示数据页面
     const game = gameData[username];
     const {
       guessedWords,
@@ -48,7 +47,6 @@ app.get("/", (req, res) => {
       )
     );
   } else {
-    // 如果用户未登录，则显示登录表单
     res.send(webPage.loginForm());
   }
 });
@@ -62,13 +60,11 @@ app.post("/login", (req, res) => {
   }
 
   const sessionId = uuidv4();
-  sessions[sessionId] = username; //将username存储在sessions对象中，其中sessioId作为键
+  sessions[sessionId] = username; 
   if (!gameData[username]) {
-    // 生成随机秘密单词
     const secretWord = words[Math.floor(Math.random() * words.length)];
     console.log(`Username: ${username}, Secret Word: ${secretWord}`);
 
-    // 将用户及其游戏数据存储到 gameData 中
     gameData[username] = {
       guessedWords: [],
       matchedLettersList: [],
@@ -179,7 +175,6 @@ function isValidUsername(username) {
   return allowedChars.test(username);
 }
 
-//比较两个词相同的字母个数
 function compare(word1, word2) {
   word1 = word1.toUpperCase();
   word2 = word2.toUpperCase();
