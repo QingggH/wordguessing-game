@@ -109,7 +109,7 @@ const webPage = {
           const popup = document.getElementById('popup');
           const closePopup = document.getElementById('closePopup');
       
-          // 点击按钮时显示弹出窗口
+        
           rulesBtn.addEventListener('click', function() {
             popup.classList.remove('popup');
               popup.classList.add('active');
