@@ -1,0 +1,154 @@
+body {
+  font-family: "Sono", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-size: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+  color: white;
+}
+
+.words-list {
+  padding: 0 1rem 0 2rem;
+}
+.words-title {
+  color: white;
+  font-size: 1.5rem;
+  padding-right: 1.3rem;
+}
+
+.word-box {
+  display: inline-block;
+  background-color: #555;
+  padding: 5px 10px;
+  border-radius: 0.7rem;
+  margin: 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #666;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.word-clickable {
+  cursor: pointer;
+}
+
+.valid-guess {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.correct-guess {
+  color: white;
+  background-image: linear-gradient(135deg, #3b82f6, #ef4444, #16a34a, #eab308);
+}
+
+.playarea-container {
+  display: flex;
+  justify-content: space-between;
+}
+.left-area {
+  padding: 0 10% 0 10%;
+  max-width: 50%;
+}
+
+.right-area {
+  padding-top: 3rem;
+  padding-right: 10%;
+}
+
+.guessed-words {
+  padding-top: 2rem;
+}
+
+.guessed-words-title {
+  color: white;
+}
+p {
+  color: white;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 1rem;
+  outline: none;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #14b8a6;
+  color: #fff;
+  border: 2px solid #14b8a6;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Coiny", sans-serif;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.logout-button {
+  width: 100%;
+}
+
+.rules-button {
+  display: inline-block;
+  width: 100%;
+}
+
+p.guess-message {
+  color: red;
+  font-weight: bold;
+}
+
+.result {
+  color: #9acd32;
+  font-weight: bold;
+}
+
+.popup {
+  display: none;
+}
+.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70rem;
+  padding: 2rem 1rem 2rem 2rem;
+  background-color: #e6e6fa;
+  border: 2px solid #666;
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+.active h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+.active p {
+  color: black;
+}
+.active button {
+  display: block;
+  margin-top: 2rem;
+}
