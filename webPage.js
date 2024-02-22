@@ -58,7 +58,13 @@ const webPage = {
         <p>Games Won: <span class="result">${wonGames || "0"}</span></p>
         ${
           status === "won"
-            ? "<p class='guess-message'>Correct Guess! You Won!</p>"
+            ? `<div id="won" class="won">
+            <p>Correct Guess! You Won!</p>
+            <p>Wanna Start A New Game ?</p>
+            <form action="/new-game" method="POST" class="won-alert">
+                <button type="submit" class="won-button">OK</button>
+            </form>
+        </div>`
             : status === "invalid guess"
             ? "<p class='guess-message'>Invalid Guess!</p>"
             : status === "valid but incorrect guess"
@@ -81,6 +87,7 @@ const webPage = {
         <button id="rules-button" class="rules-button">Game Rules</button>
         </div>
 </div>
+
 
 <div id="popup" class="popup">
     <h2>Game Rules</h2>
