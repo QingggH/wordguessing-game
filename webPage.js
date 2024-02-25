@@ -34,7 +34,11 @@ const webPage = {
                     ? "correct-guess"
                     : "valid-guess"
                   : ""
-              } word-clickable" onclick="wordClicked('${availableWord}')">${availableWord}</span>`
+              } word-clickable" onclick="${
+                status === "won"
+                  ? "return false;"
+                  : `wordClicked('${availableWord}')`
+              }">${availableWord}</span>`
           )
           .join(" ")}</div>
 
@@ -71,9 +75,15 @@ const webPage = {
             ? "<p class='guess-message'>Incorrect! Have Another Try!</p>"
             : ""
         }
-        <form action="/guess" method="POST" id="guessForm">
-          <input type="text" id="guessInput" name="guess" placeholder="Enter your guess" required>
-          <button type="submit">Guess</button>
+        <form action="/guess" method="POST" id="guessForm" ${
+          status === "won" ? "disabled" : ""
+        }>
+          <input type="text" id="guessInput" name="guess" placeholder="Enter your guess" required ${
+            status === "won" ? "disabled" : ""
+          }>
+          <button type="submit" ${
+            status === "won" ? "disabled" : ""
+          }>Guess</button>
         </form>
         </div>
 
@@ -110,6 +120,12 @@ const webPage = {
           function wordClicked(word) {
             document.getElementById('guessInput').value = word;
             document.getElementById('guessForm').submit();
+          }
+
+          const status = "${status}";
+          if (status === "won") {
+            const wordBoxes = document.querySelectorAll('.word-box');
+            wordBoxes.forEach(box => box.classList.remove('word-clickable'));
           }
 
           const rulesBtn = document.getElementById('rules-button');
@@ -196,7 +212,7 @@ const webPage = {
     </head>
     <body>
     <div class="form-container">
-      <h1>Oops! Wrong Session ID. Please try again!</h1>
+      <h1>Oops! Invalid Session ID. Please login again!</h1>
       <form action="/login" method="POST">
         <input type="text" name="username" placeholder="Enter your username" required>
         <button type="submit">Login</button>

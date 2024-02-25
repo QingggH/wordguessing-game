@@ -148,7 +148,7 @@ p.guess-message {
   display: none;
 }
 .active {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -171,4 +171,11 @@ p.guess-message {
 .active button {
   display: block;
   margin-top: 2rem;
+}
+@media screen and (max-width: 1200px) {
+  .active {
+    width: 80%;
+    padding: 1rem;
+    overflow-y: auto;
+  }
 }
