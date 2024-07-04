@@ -2,7 +2,8 @@
 ### 1. Introduction
 * This is a Server-side Dynamic game using vanilla JavaScript
 ### 2. Demo
-*![Image1](./images/1.png)
-*![Image2](./images/2.png)
+* Take username Jack, correct word 'among' as an example
+![Image1](./images/1.png)
+![Image2](./images/2.png)
 ### 3.Game Rules
-*![Image3](./images/3.png)
+![Image3](./images/3.png)
